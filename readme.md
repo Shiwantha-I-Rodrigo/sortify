@@ -6,8 +6,8 @@ the list will be updated to indicate as the algorithms that are being implemente
 ## Comparison-Based Sorting Algorithms:
 Compare elements and swap them based on comparisons.
 
-- **Bubble Sort** < in development >
-- Selection Sort
+- **Bubble Sort**
+- **Selection Sort**
 - Insertion Sort
 - Merge Sort
 - Quick Sort
