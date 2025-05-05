@@ -2,29 +2,41 @@ from random import randint
 
 
 def merge(listL, listR):
+    print(f"merge {listL} and {listR}")
     listX = []
 
-    if len(listL) >= len(listR):
-        for R in listR:
-            if listL:
-                while (R >= listL[0]):
-                    listX.append(listL.pop(0))
-                    if not listL:
+    if len(listR) >= len(listL):
+        for L in listL:
+            if listR:
+                while (L >= listR[0]):
+                    listX.append(listR.pop(0))
+                    if not listR:
                         break
-            listX.append(R)
+            listX.append(L)
 
-        if listL:
-            for L in listL:
-                listX.append(L)
+        if listR:
+            for R in listR:
+                listX.append(R)
 
-    print(listX)
+    return listX
 
 
+def split(listT):
+    print(f"split {listT}")
+    if len(listT) <= 1:
+        return listT
 
-listx = [randint(0, 9) for i in range(0, 5)]
-listy = [randint(0, 9) for i in range(0, 5)]
-listx.sort()
-listy.sort()
-print(listx, listy)
-merge(listx, listy)
+    mid = len(listT) // 2
+    left = listT[:mid]
+    right = listT[mid:]
 
+    sortedLeft = split(left)
+    sortedRight = split(right)
+
+    return merge(sortedLeft, sortedRight)
+
+
+listU = [randint(0, 99) for i in range(0, 20)]
+print(listU)
+print("<<<start>>>")
+print(split(listU))
